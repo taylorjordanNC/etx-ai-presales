@@ -2,7 +2,7 @@
 site:
   title: LLM optimization and inference leveraging
   url: https://taylorjordanNC.github.io/etx-ai-presales
-  start_page: modules::index.adoc
+  start_page: modules:ROOT:index.adoc
 
 content:
   sources:
