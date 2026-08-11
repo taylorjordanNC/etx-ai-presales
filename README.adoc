@@ -1,109 +1,84 @@
-=== Getting Started
+= ETX AI Presales Workshop
 
-This template is designed to be used as a base for your showroom lab guides.
+Welcome to our ETX AI Presales hands-on workshop! This comprehensive program takes you through the complete lifecycle of enterprise AI deployment - from initial model serving to advanced agentic automation.
 
-The content is built using Antora, a static site generator for creating documentation sites from AsciiDoc documents.
+== Module Overview
 
-This git repo template was created to make it easy for you to start developing your lab instructions.
+This workshop provides hands-on experience with enterprise AI deployment, evaluation, optimization, and advanced use cases. You'll learn to deploy models efficiently, evaluate performance, implement optimization techniques, build scalable model services, and create intelligent agentic systems.
 
-Features:
+=== 🚀 Module 1: vLLM Deployment
+**Deploy inference servers on enterprise-grade platforms**
 
-. 0% cruft
-. Red Hat Demo Platform UI Bundle default
-. Dev Mode extension that displays the asciidoc attributes you have to work with
-. Content is generated using Antora, a static site generator for creating documentation sites from AsciiDoc documents.
+* **1.1 OpenShift Deployment**: Deploy using Helm charts and container orchestration for scalable inference
+* **1.2 OpenShift AI Deployment**: Leverage Red Hat OpenShift AI platform for managed LLM serving with enterprise features
+* **1.3 Deployment Wrap-up**: Compare deployment approaches and establish best practices
 
-== Getting Started
+**Key Skills**: Container orchestration, cloud-native deployment, platform selection, enterprise AI infrastructure
 
-=== Using Containers (Recommended)
+=== 📊 Module 2: Performance & Accuracy Evaluation  
+**Measure and benchmark LLM systems for production readiness**
 
-In order to test and develop on your local machine, you can use a specially built container with Podman or Docker as follows.
+* **2.1 Performance Evaluation**: Use GuideLLM to measure latency, throughput, and resource utilization under realistic workloads
+* **2.2 Accuracy Assessment**: Evaluate model quality using ARC-Easy benchmarks and establish quality baselines
+* **2.3 Evaluation Best Practices**: Establish benchmarking workflows and continuous performance monitoring
 
-. Create a git repo from this template
-.. Suggested naming: `showroom_<lab-name>`
-. Clone your new repo and `cd` into it
-. When you make changes to the content, all you need is to kill the container and run it again.
-+
-[source,sh]
-----
-podman run --rm --name antora -v $PWD:/antora -p 8080:8080 -i -t ghcr.io/juliaaano/antora-viewer
-----
+**Key Skills**: Performance testing, quality assessment, benchmarking methodologies, production readiness validation
 
-For SELinux environments, `:z` may need to be appended to the volume mount:
+=== ⚡ Module 3: vLLM Optimization
+**Maximize inference performance through tuning and configuration**
 
-----
-podman run --rm --name antora -v $PWD:/antora:z -p 8080:8080 -i -t ghcr.io/juliaaano/antora-viewer
-----
+* **3.1 Performance Tuning**: Hands-on optimization of granite-3.3-8b-instruct for minimal latency and maximum throughput
+* **3.2 Optimization Conclusion**: Review optimization strategies and establish performance baselines
 
-Live-reload is not supported.
+**Key Skills**: Performance optimization, parameter tuning, inference scaling, latency reduction
 
-=== Using Local Files (Less Recommended)
+=== 🏗️ Module 4: Model-as-a-Service Infrastructure (Optional for TL2 Participants)
+**Build centralized, scalable model serving platforms**
 
-. Create a git repo from this template
-. Clone the repo and `cd` into it
-. Run ./utilities/lab-serve
-. Open http://localhost:8080 in your browser
-. Run ./utilities/lab-build to build your html
+* **4.1 MaaS Model Setup**: Deploy and manage centralized model endpoints for enterprise consumption
+* **4.2 API Gateway Integration**: Implement secure, governed access to model services
+* **4.3 Code Assistant Implementation**: Build AI-powered development tools using your model infrastructure  
+* **4.4 Interactive Code Game**: Hands-on coding challenges with AI assistance
+* **4.5 Analytics & Monitoring**: Track usage, performance, and ROI across your model services
+* **4.6 MaaS Conclusion**: Review architecture patterns and scaling strategies
 
-To rebuild your html, run `./utilites/build`.
+**Key Skills**: Platform engineering, API design, centralized model serving, usage analytics, enterprise governance
 
-== Editing Files
+=== 🤖 Module 5: Agentic AI for Operations
+**Deploy intelligent automation for DevOps and system administration**
 
-Now you are ready to go!
-You can start editing the files in the `content/modules/ROOT/pages/` directory.
+* **5.1 MCP Server Integration**: Connect your models to live systems using Model Context Protocol servers for OpenShift and Slack integration
+* **5.2 Intelligent Automation**: Build AI agents that can troubleshoot, monitor, and manage infrastructure through natural language
 
-Many modern editors such as Visual Studio Code offer live Asciidoc Preview extensions.
+**Key Skills**: AI agents, system automation, operational AI, infrastructure as code, intelligent monitoring
 
-=== Understanding the Basic Template Directory Structure
+=== 📚 Reference Materials
+**Business and technical guides for real-world application**
 
-[source,sh]
-----
-./content/modules/ROOT/
-├── assets
-│   └── images                       # Images used in your content
-│       └── example-image.png
-├── examples                         # You can add downloadable assets here
-│   └── example-bash-script.sh       # e.g. an example bash script
-├── nav.adoc                         # Navigation for your lab
-├── pages                            # Your content goes here
-│   ├── index.adoc                   # First page of your lab, e.g. overview etc
-│   ├── module-01.adoc
-│   └── module-02.adoc               # Sample lab has 2 modules including index.adoc
-└── partials                         # You can add partials here, reusable content inserted inline into your modules
-    └── example_partial.adoc
-----
+* **Enterprise Qualification Guide**: Framework for identifying and qualifying LLM optimization opportunities with enterprise clients
+* **Technical Deep Dives**: Comprehensive technical documentation on quantization methods and optimization strategies
+* **Model Comparison Examples**: Pre-compressed model performance comparisons and selection criteria
 
-== Adding Additional Links
+=== 🎯 Learning Outcomes
 
-You can add links to external content in the convenient "Links" drop-down on the upper-right of the Showroom Summit 2024 UI.
+By the end of this workshop, you will be able to:
 
-../content/antora.yml
-[source,yaml]
-----
-asciidoc:
-  attributes:
-    page-links:
-    - url: https://redhat.com
-      text: Red Hat
-----
+* Deploy production-ready LLM inference servers on enterprise platforms
+* Evaluate and benchmark LLM systems for performance and accuracy  
+* Optimize vLLM configurations for specific use cases and constraints
+* Build centralized Model-as-a-Service platforms for enterprise consumption
+* Implement AI-powered development and operational automation tools
+* Create intelligent agents that can interact with live infrastructure
+* Design scalable, governed AI platforms that drive business value
 
-image::ui-links.png[]
+=== ⏱️ Workshop Format
 
-== Dev Mode
+* **Duration**: Multi-day technical workshop program
+* **Format**: Mix of theory, hands-on labs, and real-world scenarios
+* **Prerequisites**: Basic familiarity with containers, Kubernetes, and machine learning concepts
+* **Environment**: Access to OpenShift cluster with GPU resources and external integrations
+* **Progression**: From basic deployment to advanced agentic automation
 
-As a convenience to developers, the Dev Mode Extention (disabled by default) displays the asciidoc attributes you have to work with while writing your lab instructions.
 
-. Disable/Enable Dev Mode by changing `enabled: true` or `enabled: false`
-+
-.default-site.yml
-[source,yaml]
-----
-extensions:
-  - id: dev-mode
-    require: ./content/lib/dev-mode.js
-    enabled: false
-----
 
-. Produces
-+
-image::dev-mode.png[]
+
